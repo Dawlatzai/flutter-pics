@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class App extends StatefulWidget {
-
+  @override
+  State<StatefulWidget> createState() {
+    return AppState();
+  }
 }
 
 class AppState extends State<App> {
