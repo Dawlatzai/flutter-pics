@@ -4,7 +4,7 @@ class App extends StatefulWidget {
 
 }
 
-class AppState extends StatelessWidget {
+class AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
