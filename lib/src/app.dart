@@ -24,7 +24,9 @@ class AppState extends State<App> {
 
     var imageModel = ImageModel.fromJson(json.decode(response.body));
 
-    images.add(imageModel);
+    setState(() {
+      images.add(imageModel);
+    });
 
   }
 
