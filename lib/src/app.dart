@@ -12,41 +12,39 @@ class App extends StatefulWidget {
 }
 
 class AppState extends State<App> {
-
   int counter = 0;
 
   List<ImageModel> images = [];
 
-  void _fetchImage() async
-  {
-    counter +=1;
+  void _fetchImage() async {
+    counter += 1;
 
-    final response = await get('http://jsonplaceholder.typicode.com/photos/$counter');
+    final response =
+        await get('http://jsonplaceholder.typicode.com/photos/$counter');
 
     final imageModel = ImageModel.fromJson(json.decode(response.body));
 
     setState(() {
       images.add(imageModel);
     });
-
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-    home: Scaffold(
-      body: ImageList(images),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: _fetchImage,
+      home: Scaffold(
+        body: ImageList(images),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: _fetchImage,
+        ),
+        appBar: AppBar(
+          title: Text('Lets see the images!'),
+        ),
       ),
-      appBar: AppBar(
-        title: Text('Lets see the images!'),
-      ),
-    ),
-    theme: ThemeData(
+      theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-  );
+    );
   }
 }
