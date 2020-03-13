@@ -43,7 +43,10 @@ class AppState extends State<App> {
       appBar: AppBar(
         title: Text('Lets see the images!'),
       ),
-    )
+    ),
+    theme: ThemeData(
+        primarySwatch: Colors.deepOrange,
+      ),
   );
   }
 }
