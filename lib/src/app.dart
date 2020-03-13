@@ -14,6 +14,8 @@ class AppState extends State<App> {
 
   int counter = 0;
 
+  List<ImageModel> images = [];
+
   void _fetchImage() async
   {
     counter +=1;
@@ -21,6 +23,8 @@ class AppState extends State<App> {
     var response = await get('http://jsonplaceholder.typicode.com/posts/$counter');
 
     var imageModel = ImageModel.fromJson(json.decode(response.body));
+
+    images.add(imageModel);
 
   }
 
