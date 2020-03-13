@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' show get;
+import 'models/image_model.dart';
+import 'dart:convert';
 
 class App extends StatefulWidget {
   @override
@@ -12,11 +14,13 @@ class AppState extends State<App> {
 
   int counter = 0;
 
-  void _fetchImage()
+  void _fetchImage() async
   {
     counter +=1;
 
-    get('http://jsonplaceholder.typicode.com/posts/$counter');
+    var response = await get('http://jsonplaceholder.typicode.com/posts/$counter');
+
+    var imageModel = ImageModel.fromJson(json.decode(response.body));
 
   }
 
