@@ -43,7 +43,7 @@ class AppState extends State<App> {
         ),
       ),
       theme: ThemeData(
-        primarySwatch: Colors.deepOrange,
+        primarySwatch: Colors.green,
       ),
     );
   }
