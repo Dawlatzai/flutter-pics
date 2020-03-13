@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' show get;
 
 class App extends StatefulWidget {
   @override
@@ -13,9 +14,12 @@ class AppState extends State<App> {
 
   void _fetchImage()
   {
+    counter +=1;
+
+    get('http://jsonplaceholder.typicode.com/posts/$counter');
 
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
