@@ -3,7 +3,7 @@ class ImageModel {
   String title;
   String url;
 
-  ImageModel(this.id, this.title, this.url);
+  ImageModel(this.id, this.url, this.title);
 
   ImageModel.fromJson(Map<String, dynamic> parsedJson) {
     id = parsedJson['id'];
